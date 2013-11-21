@@ -53,8 +53,8 @@ io.sockets.on('connection', function (socket) {
    
     io.sockets.emit('user', { user: socket.remoteAddress });
 
-    socket.on('private message', function (data) {
-        io.sockets.emit('private message', { from: data.from, msg: data.msg });
+    socket.on('private message', function (from, msg) {
+        io.sockets.emit('private message');
     });
 
     socket.on('disconnect', function () {
