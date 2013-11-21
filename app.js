@@ -54,10 +54,10 @@ io.sockets.on('connection', function (socket) {
     io.sockets.emit('user', { user: address });
 });
 
-socket.on('private message', function (from, msg) {
+io.socket.on('private message', function (from, msg) {
     io.sockets.emit('I received a private message by ', { from: from, msg: msg });
 });
 
-socket.on('disconnect', function () {
+io.socket.on('disconnect', function () {
     io.sockets.emit('user disconnected');
 });
