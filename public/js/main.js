@@ -14,7 +14,7 @@ socket.on('private message', function (from, msg) {
 
 //User Events
 $('#send').click(function () {
-    socket.emit('private message', { from: 'me', msg: this.val() });
+    socket.emit('private message', { from: 'Me', msg: this.val() });
 
     $('#chatbox').append("<span>Me: " + this.val() + "</span><br/>");
     this.val('');
