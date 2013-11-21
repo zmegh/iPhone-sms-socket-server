@@ -8,15 +8,16 @@ socket.on('user', function (data) {
     $('#users').append("<tr><td>" + data.user + "</td></tr>");
 });
 
-socket.on('private message', function (data) {
+socket.on('in', function (data) {
     $('#chatbox').append("<span>new message</span><br/>");
 });
 
 //User Events
 $('#send').click(function () {
-   
-    socket.emit('private message', { from: 'Me', msg: this.val() });
 
+    socket.emit('out', { my: 'data' });
+    alert('apres emit');
+    
     $('#chatbox').append("<span>Me: " + this.val() + "</span><br/>");
     alert('apres chatbox');
     this.val('');
