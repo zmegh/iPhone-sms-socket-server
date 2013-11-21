@@ -9,18 +9,17 @@ socket.on('user', function (data) {
 });
 
 socket.on('in', function (data) {
-    $('#chatbox').append("<span>new message</span><br/>");
+    $('#chatbox').append("<span style='background-color:gray'>Partner: " + data.msg + "</span><br/>");
 });
 
 //User Events
 $('#send').click(function () {
 
-    socket.emit('out', { my: 'data' });
-    alert('apres emit');
-    
-    $('#chatbox').append("<span>Me: " + this.val() + "</span><br/>");
-    alert('apres chatbox');
-    this.val('');
+    socket.emit('out', { msg: $("#msg").val() });
+
+    $('#chatbox').append("<span style='background-color:green'>Me: " + $("#msg").val() + "</span><br/>");
+
+    $("#msg").val();
 });
 
 /*$(document).ready(function () {
