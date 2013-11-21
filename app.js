@@ -50,8 +50,8 @@ io.sockets.emit('status', { status: status }); // note the use of io.sockets to 
 });*/
 
 io.sockets.on('connection', function (socket) {
-    var endpoint = socket.address();
-    io.sockets.emit('user', { user: endpoint.address  + ":" + endpoint.port });
+   
+    io.sockets.emit('user', { user: socket.remoteAddress });
 
     socket.on('private message', function (from, msg) {
         io.sockets.emit('private message', { from: from, msg: msg });
