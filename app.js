@@ -41,10 +41,23 @@ app.get('/', routes.index);
 
 var status = "All is well.";
 
-io.sockets.on('connection', function (socket) {
-    io.sockets.emit('status', { status: status }); // note the use of io.sockets to emit but socket.on to listen
+/*io.sockets.on('connection', function (socket) {
+io.sockets.emit('status', { status: status }); // note the use of io.sockets to emit but socket.on to listen
     socket.on('reset', function (data) {
         status = "War is imminent!";
         io.sockets.emit('status', { status: status });
     });
+});*/
+
+io.sockets.on('connection', function (socket) {
+    var address = socket.handshake.address;
+    io.sockets.emit('user', { user: address });
+});
+
+socket.on('private message', function (from, msg) {
+    io.sockets.emit('I received a private message by ', { from: from, msg: msg });
+});
+
+socket.on('disconnect', function () {
+    io.sockets.emit('user disconnected');
 });

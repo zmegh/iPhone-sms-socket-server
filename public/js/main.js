@@ -1,9 +1,21 @@
 var socket = io.connect(window.location.hostname);
 
-socket.on('status', function (data) {
-    $('#status').html(data.status);
+/*socket.on('connection', function (data) {
+    socket.emit('my other event', { my: 'data' });
+});*/
+
+socket.on('user', function (data) {
+    $('#users').append("<tr><td>" + data.user + "</td></tr>");
 });
 
-$('#reset').click(function() {
-    socket.emit('reset');
+socket.on('private message', function (from, msg) {
+    $('#chatbox').append("<span>" + from + ": "  + msg + "</span><br/>");
+});
+
+//User Events
+$('#send').click(function () {
+    socket.emit('private message', { from: 'me', msg: this.val() });
+
+    $('#chatbox').append("<span>Me: " + this.val() + "</span><br/>");
+    this.val('');
 });
