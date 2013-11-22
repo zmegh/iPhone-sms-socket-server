@@ -1,71 +1,35 @@
-<head>
-  <style type="text/css">
-    .style1
-    {
-    width: 425px;
-    }
-    #chatbox
-    {
-    height: 475px;
-    }
-    #msg
-    {
-    width: 387px;
-    }
-    .style4
-    {
-    width: 449px;
-    }
-    .usersList {
-    vertical-align: top;
-    padding: 0;
-    max-height:10px;
-    }
-    #users
-    {          height: 456px;
-    width: 45px;
-    }
-    .style5
-    {
-    vertical-align: top;
-    padding: 0;
-    max-height: 10px;
-    height: 23px;
-    width: 72px;
-    }
-    .style6
-    {
-    vertical-align: top;
-    padding: 0;
-    max-height: 10px;
-    width: 72px;
-    }
-  </style>
-</head>
-<table>
-  <tr>
-    <td height="600px;" style="border-right: 2px solid black">
-      <table id="users">
-      </table>
-    </td>
+<html>
 
-    <td class="style4">
-      <div class="style1" id="chatbox"></div>
-    </td>
-  </tr>
-
-  <tr>
-    <td></td>
-    <td class="style4">
-      <input type="text" id="msg" style="width:500px;height:50px;"></input>
-      <button id="send">Send!</button>
-    </td>
-
-  </tr>
-</table>
+  <head>
+      <link rel="stylesheet" type="text/css" href="/css/iMessage.css"/>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="/js/libs/jquery.js"></script>
+    </head>
 
 
-
-
-
-
+  <body>
+    <div id="iPhoneBro" class="iPhone gen">
+      <div class="title">
+        <!-- <input type="submit" class="back button" value="Messages">
+			        <span class="contact_name button">(614) MEME-BRO</span>
+		        <input type="submit" class="edit button" value="Edit"> -->
+      </div>
+      <div id="conversation" class="conversation ">
+     <!--<div class="time"><div class="time"></div>
+		        <div class="text receive"><div class="reflect"></div></div>
+		        <div class="text sent" id="query"><div class="reflect"></div></div>
+		        <div class="text receive" id="popular"></div>
+		        <div class="text sent"><div class="reflect"></div></div>
+		        <div class="text receive"><div class="reflect"></div></div>
+		        <div class="text receive"><div class="reflect"></div></div>
+		        <div class="clear"></div>
+	       </div>-->
+	        
+      </div>
+      <div class="message">
+        <input id="imessage" type="text" name="imessage" value="" placeholder="Text Message">
+          <input id="send_btn" type="submit" value="Send" onclick="sendSMS();" class="disabled">
+            <input id="phone" type="hidden" name="number" value="">
+      </div>
+    </body>
+</html>

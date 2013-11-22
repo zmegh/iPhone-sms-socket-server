@@ -1,41 +1,16 @@
 var socket = io.connect(window.location.hostname);
 var sessionID = Guid();
 
-/*socket.on('connection', function (data) {
-    socket.emit('my other event', { my: 'data' });
-});*/
-
-socket.on('user', function (data) {
-    $('#users').append("<tr><td class='style5'>" + data.user + "</td></tr>");
-});
-
+//Socket.io
+//**************************************************************************************************************
 socket.on('in', function (data) {
-  
+
     if (data.sender == sessionID) return;
-    
-    $('#chatbox').append("<span style='background-color:gray'>" + data.sender  + ": " + data.msg + "</span><br/>");
+
+    receiveText(data.msg);
+
 });
 
-//User Events
-$('#send').click(function () {
-    SendMsg();
-});
-
-$("#msg").keypress(function (e) {
-    if (e.which == 13) {
-        SendMsg();
-    }
-});
-
-function SendMsg() {
-    socket.emit('out', { sender: sessionID, msg: $("#msg").val() });
-
-    $('#chatbox').append("<span style='background-color:green'>Me: " + $("#msg").val() + "</span><br/>");
-
-    $("#msg").val('');
-}
-
-//Helpers
 
 function Guid() {
     var d = new Date().getTime();
@@ -46,3 +21,94 @@ function Guid() {
     });
     return uuid;
 };
+//*****************************************************************************************************************
+$("#imessage").keypress(function (e) {
+    if (e.which == 13) {
+        sendSMS();
+    }
+});
+
+function sendSMS() {
+    var text = $('#imessage').val();
+    if (text != '') {
+        sendText(text);
+    }
+}
+
+function scrollDown(div) {
+    div.animate({ scrollTop: 10000 }, "slow");
+}
+
+function sendText(text) {
+  
+    socket.emit('out', { sender: sessionID, msg: text });
+
+    var conversation = $('#conversation');
+    var button = $('#send_btn');
+
+    var newTime = $('<div class="time"><p>' + getDate() + '</p></div>');
+    newTime.hide();
+    conversation.append(newTime);
+
+    var newText = $('<div class="text sent"><div class="reflect"></div><p>' + text + '</p></div>');
+    newText.hide();
+    conversation.append(newText);
+
+    newText.show('normal');
+    newTime.show('fast');
+    scrollDown(conversation);
+    button.attr("disabled", "disabled");
+    $('#imessage').val('');
+}
+
+function receiveText(smsText) {
+  
+    var button = $("#send_btn");
+    var conversation = $("#conversation");
+    
+    var newTime = $('<div class="time"><p>' + getDate() + '</p></div>');
+    //newTime.hide();
+    conversation.append(newTime);
+    
+    var newText = $('<div class="text receive"><div class="reflect"></div><p>' + smsText + '</p></div>');
+    //newText.hide();
+    conversation.append(newText);
+
+    var sender = $('#phone').val();
+}
+
+function getDate() {
+    var a_p = "";
+    var d = new Date();
+    var curr_hour = d.getHours();
+    if (curr_hour < 12) {
+        a_p = "AM";
+    }
+    else {
+        a_p = "PM";
+    }
+    if (curr_hour == 0) {
+        curr_hour = 12;
+    }
+    if (curr_hour > 12) {
+        curr_hour = curr_hour - 12;
+    }
+
+    var curr_min = d.getMinutes();
+
+    curr_min = curr_min + "";
+
+    if (curr_min.length == 1) {
+        curr_min = "0" + curr_min;
+    }
+
+    var m_names = new Array("Jan", "Feb", "Mar",
+   "Apr", "May", "Jun", "Jul", "Aug", "Sep",
+   "Oct", "Nov", "Dec");
+
+    var curr_date = d.getDate();
+    var curr_month = d.getMonth();
+    var curr_year = d.getFullYear();
+
+    return m_names[curr_month] + " " + curr_date + ", " + curr_year + ' ' + curr_hour + ":" + curr_min + " " + a_p;
+}

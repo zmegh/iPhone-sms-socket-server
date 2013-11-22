@@ -50,8 +50,9 @@ io.sockets.emit('status', { status: status }); // note the use of io.sockets to 
 });*/
 
 io.sockets.on('connection', function (socket) {
-   
-    io.sockets.emit('user', { user: socket.remoteAddress });
+    var address = socket.handshake.address;
+
+    io.sockets.emit('user', { user: address.address });
 
     socket.on('out', function (data) {
         io.sockets.emit('in', {sender: data.sender, msg: data.msg} );
