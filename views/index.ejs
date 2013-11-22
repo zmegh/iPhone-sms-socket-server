@@ -1,31 +1,50 @@
 <head>
-    <style type="text/css">
-        .style1
-        {
-            width: 425px;
-        }
-        .style2
-        {
-            height: 500px;
-            width: 48px;
-        }
-        #chatbox
-        {
-            height: 475px;
-        }
-        #msg
-        {
-            width: 387px;
-        }
-        .style4
-        {
-            width: 449px;
-        }
-    </style>
+  <style type="text/css">
+    .style1
+    {
+    width: 425px;
+    }
+    #chatbox
+    {
+    height: 475px;
+    }
+    #msg
+    {
+    width: 387px;
+    }
+    .style4
+    {
+    width: 449px;
+    }
+    .usersList {
+    vertical-align: top;
+    padding: 0;
+    max-height:10px;
+    }
+    #users
+    {          height: 456px;
+    width: 45px;
+    }
+    .style5
+    {
+    vertical-align: top;
+    padding: 0;
+    max-height: 10px;
+    height: 23px;
+    width: 72px;
+    }
+    .style6
+    {
+    vertical-align: top;
+    padding: 0;
+    max-height: 10px;
+    width: 72px;
+    }
+  </style>
 </head>
 <table>
   <tr>
-    <td class="style2">
+    <td height="600px;" style="border-right: 2px solid black">
       <table id="users">
       </table>
     </td>
@@ -33,16 +52,16 @@
     <td class="style4">
       <div class="style1" id="chatbox"></div>
     </td>
-   <tr/>
+  </tr>
 
-
-    <tr>
+  <tr>
     <td></td>
-      <td class="style4">
-        <input type="text" id="msg"></input> <button id="send">Send!</button>
-      </td>
-      
-    </tr>
+    <td class="style4">
+      <input type="text" id="msg" style="width:500px;height:50px;"></input>
+      <button id="send">Send!</button>
+    </td>
+
+  </tr>
 </table>
 
 

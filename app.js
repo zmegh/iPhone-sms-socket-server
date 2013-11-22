@@ -54,7 +54,7 @@ io.sockets.on('connection', function (socket) {
     io.sockets.emit('user', { user: socket.remoteAddress });
 
     socket.on('out', function (data) {
-        io.sockets.emit('in', {msg: data.msg} );
+        io.sockets.emit('in', {sender: data.sender, msg: data.msg} );
     });
 
     socket.on('disconnect', function () {
