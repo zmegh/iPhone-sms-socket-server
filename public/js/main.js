@@ -74,6 +74,9 @@ function receiveText(smsText) {
     //newText.hide();
     conversation.append(newText);
 
+    newText.show('normal');
+    newTime.show('fast');
+    scrollDown(conversation);
     var sender = $('#phone').val();
 }
 
