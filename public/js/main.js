@@ -7,10 +7,17 @@ socket.on('in', function (data) {
 
     if (data.sender == sessionID) return;
 
-    receiveText(data.msg);
+    receiveMessage(data);
 
 });
 
+socket.on('attachment', image);
+
+function image(from, base64Image) {
+    
+    $('#lines').append($('<p>').append($('<b>').text(from),
+        '<img src="' + base64Image + '"/>'));
+}
 
 function Guid() {
     var d = new Date().getTime();
@@ -22,16 +29,27 @@ function Guid() {
     return uuid;
 };
 //*****************************************************************************************************************
-$("#imessage").keypress(function (e) {
+$('#imessage').keypress(function (e) {
+   
+    var bDisabled = $('#imessage').val() == '' ? "disabled" : "";
+  
+    $("#send_btn").css("disabled", bDisabled);
+    
     if (e.which == 13) {
         sendSMS();
     }
+    
+   
+});
+
+$("#imgAttach").click(function () {
+    $("#fileInput").click();
 });
 
 function sendSMS() {
     var text = $('#imessage').val();
     if (text != '') {
-        sendText(text);
+        sendMessage({msg: text});
     }
 }
 
@@ -39,10 +57,12 @@ function scrollDown(div) {
     div.animate({ scrollTop: 10000 }, "slow");
 }
 
-function sendText(text) {
+function sendMessage(data) {
   
-    socket.emit('out', { sender: sessionID, msg: text });
+    socket.emit('out', { sender: sessionID, msg: data.msg });
 
+    var newText;
+    var newImg;
     var conversation = $('#conversation');
     var button = $('#send_btn');
 
@@ -50,34 +70,59 @@ function sendText(text) {
     newTime.hide();
     conversation.append(newTime);
 
-    var newText = $('<div class="text sent"><div class="reflect"></div><p>' + text + '</p></div>');
-    newText.hide();
-    conversation.append(newText);
+    if (data.msg) {
+        newText = $('<div class="text sent"><div class="reflect"></div><p>' + data.msg + '</p></div>');
+        newText.hide();
+        conversation.append(newText);
+    }
 
-    newText.show('normal');
-    newTime.show('fast');
-    scrollDown(conversation);
-    button.attr("disabled", "disabled");
+    if (data.blob) {
+
+        newImg = $('<div class="text sent"><div class="reflect"></div><img height="40px" width="40px" src="' + data.blob + '"/></div>');
+        newImg.click(function () {
+            ShowFullSize(data.blob);
+        });
+        //newImg.hide();
+        conversation.append(newImg);
+    }
+
+    if(data) newTime.show('normal');
+    if (data.msg)  newText.show('normal');
+    if (data.blob) newImg.show('normal');
+    
+    //button.attr("disabled", "disabled");
     $('#imessage').val('');
+    scrollDown(conversation);
 }
 
-function receiveText(smsText) {
-  
-    var button = $("#send_btn");
+function receiveMessage(data) {
+    
     var conversation = $("#conversation");
     
     var newTime = $('<div class="time"><p>' + getDate() + '</p></div>');
-    //newTime.hide();
     conversation.append(newTime);
-    
-    var newText = $('<div class="text receive"><div class="reflect"></div><p>' + smsText + '</p></div>');
-    //newText.hide();
-    conversation.append(newText);
 
-    newText.show('normal');
-    newTime.show('fast');
+    if (data.msg) {
+        var newText = $('<div class="text receive"><div class="reflect"></div><p>' + data.msg + '</p></div>');
+        newText.hide();
+        conversation.append(newText);
+    }
+
+    if (data.blob) {
+
+        var newImg = $('<div class="text receive"><div class="reflect"></div><img height="40px" width="40px" src="' + data.blob + '"/></div>');
+        newImg.click(function() {
+            ShowFullSize(data.blob);
+        });
+        conversation.append(newImg);
+        newImg.show('normal');
+    }
+
+    if(data) newTime.show('normal');
+    if (data.msg)  newText.show('normal');
+    if (data.img) newImg.show('normal');
+    
     scrollDown(conversation);
-    var sender = $('#phone').val();
 }
 
 function getDate() {
@@ -114,4 +159,61 @@ function getDate() {
     var curr_year = d.getFullYear();
 
     return m_names[curr_month] + " " + curr_date + ", " + curr_year + ' ' + curr_hour + ":" + curr_min + " " + a_p;
+}
+
+//Attachment
+$('#fileInput').on('change', function (e) {
+    //Get the first (and only one) file element
+    //that is included in the original event
+    var file = e.originalEvent.target.files[0],
+        reader = new FileReader();
+    //When the file has been read...
+    reader.onload = function (evt) {
+        //Because of how the file was read,
+        //evt.target.result contains the image in base64 format
+        //Nothing special, just creates an img element
+        //and appends it to the DOM so my UI shows
+        //that I posted an image.
+        //send the image via Socket.io
+
+        socket.emit('attachment', { sender: sessionID, blob: evt.target.result });
+        sendMessage({blob: evt.target.result });
+    };
+    //And now, read the image and base64
+    reader.readAsDataURL(file);
+});
+
+function ShowFullSize(blob) {
+
+    var conversation = $("#conversation");
+    var position = conversation.position();
+    var fullImg = $('<img id=\"imgfullSize\" src="' + blob + '"/>');
+    
+    fullImg.click(function() {
+        this.remove();
+        $("#image-overlay").hide();
+        conversation.show();
+    });
+    
+    fullImg.css({
+        "width": conversation.width(),
+        "height": conversation.height(),
+        "top" : position.top,
+        "left": position.left,
+        "z-index": 1,
+        "opacity": 1,
+    });
+    
+     $("#image-overlay").css({
+        "width": conversation.width(),
+        "height": conversation.height(),
+        "top" : position.top,
+        "left": position.left,
+        "z-index": 1,
+        "opacity": 1
+    });
+    
+    $("#image-overlay").append(fullImg);
+    $("#image-overlay").show();
+    conversation.hide();
 }
