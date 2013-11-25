@@ -58,6 +58,7 @@ body {
 	max-width: 180px;
 	position: relative;
 	top: -7px;
+	 width: 350px;
 }
  
 .iPhone .text.sent {
@@ -77,14 +78,13 @@ body {
  
 .iPhone
 {
-	width: 320px;
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	border-radius: 3px;
 	margin: auto;
-	border-style: solid;
-	border-width: 1px;
+
 	font: 14px 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
+	 width: 350px;
 }
  
 .conversation {
@@ -93,6 +93,7 @@ body {
 	box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.49), 1px 1px 2px rgba(0, 0, 0, 0.3);
 	padding-top: 10px;
 	overflow: scroll;
+	width: 350px;
 }
  
 .live .conversation{
@@ -137,6 +138,7 @@ body {
 	background: -moz-linear-gradient(90deg, rgb(109, 131, 161) 0%, rgb(126, 147, 175) 47.6%, rgb(140, 158, 181) 50.3%, rgb(180, 191, 206) 100%) #6e84a2;
 	background: -webkit-gradient(linear, left bottom, left top, from(rgb(109, 131, 161)), color-stop(0.476, rgb(126, 147, 175)), color-stop(0.503, rgb(140, 158, 181)), to(rgb(180, 191, 206))) #6e84a2;
 	color: #ffffff;
+    width: 350px;
 }
 .iPhone div.title input[type=submit] {
 	padding: 0 10px;
@@ -197,6 +199,7 @@ body {
 	height: 25px;
 	margin: 0;
 	padding: 6px 0;
+    width: 350px;
 }
 .message input[type=text] {
 	-moz-border-radius:12px;
@@ -221,7 +224,7 @@ body {
 	-webkit-border-radius:12px;
 	border-radius:12px;
 	border-width: 1px;
-	width: 66px;
+	width: 60px;
 	height: 25px;
 	margin: auto 10px;
 	font: 14px 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
@@ -308,4 +311,10 @@ and (min-width : 1824px) {
 only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5) {
 /* Styles */
+}
+
+.full-image-overlay {
+    z-index: 1;
+    opacity: 1;
+    display:none;
 }

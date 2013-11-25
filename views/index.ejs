@@ -1,13 +1,14 @@
 <html>
 
   <head>
-      <link rel="stylesheet" type="text/css" href="/css/iMessage.css"/>
+      <link rel="stylesheet" type="text/css" href="/public/css/iMessage.css"/>
       <script src="/socket.io/socket.io.js"></script>
       <script src="/js/libs/jquery.js"></script>
     </head>
 
 
   <body>
+ 
     <div id="iPhoneBro" class="iPhone gen">
       <div class="title">
         <!-- <input type="submit" class="back button" value="Messages">
@@ -26,10 +27,13 @@
 	       </div>-->
 	        
       </div>
+	  <div id="image-overlay" class="full-image-overlay"></div>
       <div class="message">
-        <input id="imessage" type="text" name="imessage" value="" placeholder="Text Message">
-          <input id="send_btn" type="submit" value="Send" onclick="sendSMS();" class="disabled">
-            <input id="phone" type="hidden" name="number" value="">
+          <img src="/images/iMessage-icon.png" height="20px;" width="20px;" id="imgAttach"/>
+          <input id="imessage" type="text" name="imessage" value="" placeholder="Text Message">
+          <input id="send_btn" type="submit" value="Send" onclick="sendSMS();">
+          <input id="phone" type="hidden" name="number" value="">
       </div>
+      <input type="file" id="fileInput" style="visibility:hidden;">
     </body>
 </html>

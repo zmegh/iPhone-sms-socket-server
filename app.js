@@ -50,12 +50,19 @@ io.sockets.emit('status', { status: status }); // note the use of io.sockets to 
 });*/
 
 io.sockets.on('connection', function (socket) {
+    console.log("*******New User *******");
     var address = socket.handshake.address;
 
     io.sockets.emit('user', { user: address.address });
 
     socket.on('out', function (data) {
-        io.sockets.emit('in', {sender: data.sender, msg: data.msg} );
+        console.log("********New Private Message***************");
+        io.sockets.emit('in', { sender: data.sender, msg: data.msg });
+    });
+
+    socket.on('attachment', function (data) {
+        //Received an image: broadcast to all
+        io.sockets.emit('in', { sender: data.sender, blob: data.blob });
     });
 
     socket.on('disconnect', function () {
