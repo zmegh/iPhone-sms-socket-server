@@ -51,10 +51,11 @@ $('#imessage').keypress(function (e) {
         }
         timeoutReference = setTimeout(function () {
             socket.emit("stop typing", sessionID);
-        }, 1500);
+        }, 500);
   //****************************************
     
     if (e.which == 13) {
+        socket.emit("stop typing", sessionID);
         sendSMS();
     }
     
@@ -62,6 +63,7 @@ $('#imessage').keypress(function (e) {
 });
 
 $("#imgAttach").click(function () {
+    socket.emit("stop typing", sessionID);
     $("#fileInput").click();
 });
 
