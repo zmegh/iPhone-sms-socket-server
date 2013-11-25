@@ -65,8 +65,20 @@ io.sockets.on('connection', function (socket) {
         io.sockets.emit('in', { sender: data.sender, blob: data.blob });
     });
 
+    socket.on("start typing", function (sessionId) {
+        //alert('got start typing');
+        io.sockets.emit('start typing', sessionId);
+    });
+
+    socket.on("stop typing", function (sessionId) {
+        //alert('got stop typing');
+        io.sockets.emit('stop typing', sessionId );
+    });
+    
     socket.on('disconnect', function () {
         io.sockets.emit('user disconnected');
     });
+
 });
+
 

@@ -94,6 +94,7 @@ body {
 	padding-top: 10px;
 	overflow: scroll;
 	width: 350px;
+	position: relative;
 }
  
 .live .conversation{
@@ -317,4 +318,13 @@ only screen and (min-device-pixel-ratio : 1.5) {
     z-index: 1;
     opacity: 1;
     display:none;
+}
+
+.User-Typing {
+    opacity: 0.5;
+    padding-left: 110px;
+   position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
 }

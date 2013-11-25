@@ -11,13 +11,16 @@ socket.on('in', function (data) {
 
 });
 
-socket.on('attachment', image);
-
-function image(from, base64Image) {
+socket.on("start typing", function (Id) {
+    if (sessionID == Id) return;
     
-    $('#lines').append($('<p>').append($('<b>').text(from),
-        '<img src="' + base64Image + '"/>'));
-}
+    $("#isTyping").show();
+});
+
+    socket.on("stop typing", function (Id) {
+         if (sessionID == Id) return;
+        $("#isTyping").hide();
+    });
 
 function Guid() {
     var d = new Date().getTime();
@@ -28,12 +31,28 @@ function Guid() {
     });
     return uuid;
 };
+
 //*****************************************************************************************************************
+var timeoutReference;
 $('#imessage').keypress(function (e) {
    
     var bDisabled = $('#imessage').val() == '' ? "disabled" : "";
   
     $("#send_btn").css("disabled", bDisabled);
+    
+    //************ Typing event ******************************
+    
+        var _this = $(this); // copy of this object for further usage
+
+        if (timeoutReference) {
+            clearTimeout(timeoutReference);
+            
+            socket.emit("start typing", sessionID);
+        }
+        timeoutReference = setTimeout(function () {
+            socket.emit("stop typing", sessionID);
+        }, 1500);
+  //****************************************
     
     if (e.which == 13) {
         sendSMS();
@@ -58,7 +77,9 @@ function scrollDown(div) {
 }
 
 function sendMessage(data) {
-  
+  //Close image if open
+    hideFullImagePreview();
+    
     socket.emit('out', { sender: sessionID, msg: data.msg });
 
     var newText;
@@ -125,6 +146,11 @@ function receiveMessage(data) {
     scrollDown(conversation);
 }
 
+function hideFullImagePreview() {
+    $("#image-overlay").hide();
+    $("#conversation").show();
+}
+
 function getDate() {
     var a_p = "";
     var d = new Date();
@@ -189,10 +215,15 @@ function ShowFullSize(blob) {
     var position = conversation.position();
     var fullImg = $('<img id=\"imgfullSize\" src="' + blob + '"/>');
     
+    //Full Image events
     fullImg.click(function() {
         this.remove();
         $("#image-overlay").hide();
         conversation.show();
+    });
+
+    fullImg.dbclick(function() {
+        
     });
     
     fullImg.css({
