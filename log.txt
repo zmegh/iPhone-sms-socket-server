@@ -1,0 +1,12 @@
+2013-11-21T20:26:39.188785+00:00 heroku[api]: Enable Logplex by elmeghni@gmail.com
+2013-11-21T20:26:39.222989+00:00 heroku[api]: Release v2 created by elmeghni@gmail.com
+2013-11-21T20:27:59+00:00 heroku[slug-compiler]: Slug compilation started
+2013-11-21T20:28:10+00:00 heroku[slug-compiler]: Slug compilation finished
+2013-11-21T20:28:59.231685+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path=/ host=mysterious-refuge-6512.herokuapp.com fwd="70.192.8.23" dyno= connect= service= status=503 bytes=
+2013-11-21T20:28:59.740464+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path=/favicon.ico host=mysterious-refuge-6512.herokuapp.com fwd="70.192.8.23" dyno= connect= service= status=503 bytes=
+2013-11-21T20:28:10.260251+00:00 heroku[api]: Add PATH config by elmeghni@gmail.com
+2013-11-21T20:28:10.307712+00:00 heroku[api]: Release v3 created by elmeghni@gmail.com
+2013-11-21T20:28:10.375269+00:00 heroku[api]: Deploy 3c38e6c by elmeghni@gmail.com
+2013-11-21T20:28:10.401048+00:00 heroku[api]: Release v4 created by elmeghni@gmail.com
+2013-11-21T20:31:50.695059+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path=/ host=mysterious-refuge-6512.herokuapp.com fwd="70.192.8.23" dyno= connect= service= status=503 bytes=
+2013-11-21T20:31:50.815659+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path=/favicon.ico host=mysterious-refuge-6512.herokuapp.com fwd="70.192.8.23" dyno= connect= service= status=503 bytes=

@@ -1,0 +1,37 @@
+<html>
+
+  <head>
+      <link rel="stylesheet" type="text/css" href="/public/css/iMessage.css"/>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="/js/libs/jquery.js"></script>
+    </head>
+
+
+  <body>
+    <div id="iPhoneBro" class="iPhone gen">
+      <div class="title">
+        <!-- <input type="submit" class="back button" value="Messages">
+			        <span class="contact_name button">(614) MEME-BRO</span>
+		        <input type="submit" class="edit button" value="Edit"> -->
+      </div>
+      <div id="conversation" class="conversation ">
+     <!--<div class="time"><div class="time"></div>
+		        <div class="text receive"><div class="reflect"></div></div>
+		        <div class="text sent" id="query"><div class="reflect"></div></div>
+		        <div class="text receive" id="popular"></div>
+		        <div class="text sent"><div class="reflect"></div></div>
+		        <div class="text receive"><div class="reflect"></div></div>
+		        <div class="text receive"><div class="reflect"></div></div>
+		        <div class="clear"></div>
+	       </div>-->
+	        
+      </div>
+      <div class="message">
+          <img src="public/images/iMessage-icon.png"/>
+          <input id="imessage" type="text" name="imessage" value="" placeholder="Text Message">
+          <input id="send_btn" type="submit" value="Send" onclick="sendSMS();" class="disabled">
+          <input id="phone" type="hidden" name="number" value="">
+      </div>
+      <input type="file" id="fileInput" style="visibility:hidden;">
+    </body>
+</html>

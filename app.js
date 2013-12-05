@@ -32,7 +32,7 @@ io.configure(function () {
 
 // Routes
 
-var port = process.env.PORT || 5000; // Use the port that Heroku provides or default to 5000
+var port = 5000; // Use the port that Heroku provides or default to 5000
 app.listen(port, function () {
     console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 });
@@ -50,6 +50,8 @@ io.sockets.emit('status', { status: status }); // note the use of io.sockets to 
 });*/
 
 io.sockets.on('connection', function (socket) {
+    io.sockets.emil("in", { sender: "New user" });
+
     console.log("*******New User *******");
     var address = socket.handshake.address;
 
@@ -72,9 +74,9 @@ io.sockets.on('connection', function (socket) {
 
     socket.on("stop typing", function (sessionId) {
         //alert('got stop typing');
-        io.sockets.emit('stop typing', sessionId );
+        io.sockets.emit('stop typing', sessionId);
     });
-    
+
     socket.on('disconnect', function () {
         io.sockets.emit('user disconnected');
     });

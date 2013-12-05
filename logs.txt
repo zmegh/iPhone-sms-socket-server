@@ -1,0 +1,101 @@
+2013-11-22T17:02:52.977221+00:00 heroku[router]: at=info method=GET path=/socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139762620 host=mysterious-refuge-6512.herokuapp.com fwd="70.192.42.121" dyno=web.1 connect=3ms service=10017ms status=200 bytes=3
+2013-11-22T17:02:53.199033+00:00 app[web.1]: debug: set close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:02:53.199033+00:00 app[web.1]: debug: xhr-polling writing 8::
+2013-11-22T17:02:53.199033+00:00 app[web.1]: debug: clearing poll timeout
+2013-11-22T17:02:53.199033+00:00 app[web.1]: debug: xhr-polling closed due to exceeded duration
+2013-11-22T17:02:53.759290+00:00 app[web.1]: debug: discarding transport
+2013-11-22T17:02:53.758955+00:00 app[web.1]: debug: setting request GET /socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139773931
+2013-11-22T17:02:53.759171+00:00 app[web.1]: debug: setting poll timeout
+2013-11-22T17:02:53.759533+00:00 app[web.1]: debug: cleared close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:03:03.765769+00:00 heroku[router]: at=info method=GET path=/socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139773931 host=mysterious-refuge-6512.herokuapp.com fwd="70.192.42.121" dyno=web.1 connect=8ms service=10009ms status=200 bytes=3
+2013-11-22T17:03:04.544179+00:00 app[web.1]: debug: clearing poll timeout
+2013-11-22T17:03:04.544179+00:00 app[web.1]: debug: xhr-polling writing 8::
+2013-11-22T17:03:04.544179+00:00 app[web.1]: debug: set close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:03:04.544179+00:00 app[web.1]: debug: xhr-polling closed due to exceeded duration
+2013-11-22T17:03:04.802998+00:00 app[web.1]: debug: setting request GET /socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139784637
+2013-11-22T17:03:04.803366+00:00 app[web.1]: debug: setting poll timeout
+2013-11-22T17:03:04.803709+00:00 app[web.1]: debug: cleared close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:03:04.803552+00:00 app[web.1]: debug: discarding transport
+2013-11-22T17:03:14.803863+00:00 app[web.1]: debug: clearing poll timeout
+2013-11-22T17:03:14.804312+00:00 app[web.1]: debug: xhr-polling writing 8::
+2013-11-22T17:03:14.804627+00:00 app[web.1]: debug: set close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:03:14.804825+00:00 app[web.1]: debug: xhr-polling closed due to exceeded duration
+2013-11-22T17:03:14.809969+00:00 heroku[router]: at=info method=GET path=/socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139784637 host=mysterious-refuge-6512.herokuapp.com fwd="70.192.42.121" dyno=web.1 connect=20ms service=10035ms status=200 bytes=3
+2013-11-22T17:03:16.300768+00:00 app[web.1]: debug: setting request GET /socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139795622
+2013-11-22T17:03:16.304518+00:00 app[web.1]: debug: setting poll timeout
+2013-11-22T17:03:16.304518+00:00 app[web.1]: debug: discarding transport
+2013-11-22T17:03:16.304518+00:00 app[web.1]: debug: cleared close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:02:05.601973+00:00 heroku[router]: at=info method=GET path=/socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139715620 host=mysterious-refuge-6512.herokuapp.com fwd="70.192.42.121" dyno=web.1 connect=6ms service=10014ms status=200 bytes=3
+2013-11-22T17:03:26.303481+00:00 app[web.1]: debug: xhr-polling writing 8::
+2013-11-22T17:03:26.304233+00:00 app[web.1]: debug: xhr-polling closed due to exceeded duration
+2013-11-22T17:03:26.301115+00:00 app[web.1]: debug: clearing poll timeout
+2013-11-22T17:03:26.303603+00:00 app[web.1]: debug: set close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:03:27.765610+00:00 app[web.1]: debug: setting request GET /socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139807621
+2013-11-22T17:03:27.768992+00:00 app[web.1]: debug: setting poll timeout
+2013-11-22T17:03:27.769446+00:00 app[web.1]: debug: discarding transport
+2013-11-22T17:03:27.769755+00:00 app[web.1]: debug: cleared close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:03:37.770273+00:00 app[web.1]: debug: clearing poll timeout
+2013-11-22T17:03:37.771247+00:00 app[web.1]: debug: xhr-polling writing 8::
+2013-11-22T17:03:37.771517+00:00 app[web.1]: debug: set close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:03:37.771659+00:00 app[web.1]: debug: xhr-polling closed due to exceeded duration
+2013-11-22T17:03:39.218240+00:00 app[web.1]: debug: setting request GET /socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139818623
+2013-11-22T17:03:39.218574+00:00 app[web.1]: debug: cleared close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:03:39.218409+00:00 app[web.1]: debug: setting poll timeout
+2013-11-22T17:03:39.218495+00:00 app[web.1]: debug: discarding transport
+2013-11-22T17:03:49.226783+00:00 app[web.1]: debug: clearing poll timeout
+2013-11-22T17:03:49.227128+00:00 app[web.1]: debug: xhr-polling writing 8::
+2013-11-22T17:03:49.227427+00:00 app[web.1]: debug: set close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:03:49.227598+00:00 app[web.1]: debug: xhr-polling closed due to exceeded duration
+2013-11-22T17:03:51.216147+00:00 app[web.1]: debug: setting poll timeout
+2013-11-22T17:03:51.208438+00:00 app[web.1]: debug: setting request GET /socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139830622
+2013-11-22T17:03:51.217438+00:00 app[web.1]: debug: cleared close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:03:51.217065+00:00 app[web.1]: debug: discarding transport
+2013-11-22T17:04:01.216730+00:00 app[web.1]: debug: clearing poll timeout
+2013-11-22T17:04:01.217006+00:00 app[web.1]: debug: xhr-polling writing 8::
+2013-11-22T17:04:01.217241+00:00 app[web.1]: debug: set close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:04:01.217312+00:00 app[web.1]: debug: xhr-polling closed due to exceeded duration
+2013-11-22T17:04:01.220654+00:00 heroku[router]: at=info method=GET path=/socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139830622 host=mysterious-refuge-6512.herokuapp.com fwd="70.192.42.121" dyno=web.1 connect=2ms service=10016ms status=200 bytes=3
+2013-11-22T17:04:02.336606+00:00 app[web.1]: debug: setting request GET /socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139841647
+2013-11-22T17:04:02.337662+00:00 app[web.1]: debug: cleared close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:04:02.337364+00:00 app[web.1]: debug: discarding transport
+2013-11-22T17:04:02.337129+00:00 app[web.1]: debug: setting poll timeout
+2013-11-22T17:04:12.337632+00:00 app[web.1]: debug: xhr-polling writing 8::
+2013-11-22T17:04:12.338576+00:00 heroku[router]: at=info method=GET path=/socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139841647 host=mysterious-refuge-6512.herokuapp.com fwd="70.192.42.121" dyno=web.1 connect=2ms service=10006ms status=200 bytes=3
+2013-11-22T17:04:12.337037+00:00 app[web.1]: debug: clearing poll timeout
+2013-11-22T17:04:12.337796+00:00 app[web.1]: debug: set close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:04:12.337909+00:00 app[web.1]: debug: xhr-polling closed due to exceeded duration
+2013-11-22T17:04:13.825477+00:00 app[web.1]: debug: setting poll timeout
+2013-11-22T17:04:13.826423+00:00 app[web.1]: debug: cleared close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:04:13.824927+00:00 app[web.1]: debug: setting request GET /socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139853601
+2013-11-22T17:04:13.826191+00:00 app[web.1]: debug: discarding transport
+2013-11-22T17:04:23.827176+00:00 app[web.1]: debug: set close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:04:23.826968+00:00 app[web.1]: debug: xhr-polling writing 8::
+2013-11-22T17:04:23.827176+00:00 app[web.1]: debug: xhr-polling closed due to exceeded duration
+2013-11-22T17:04:23.826635+00:00 app[web.1]: debug: clearing poll timeout
+2013-11-22T17:04:23.833770+00:00 heroku[router]: at=info method=GET path=/socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139853601 host=mysterious-refuge-6512.herokuapp.com fwd="70.192.42.121" dyno=web.1 connect=27ms service=10011ms status=200 bytes=3
+2013-11-22T17:04:23.917003+00:00 app[web.1]: debug: cleared close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:04:23.916459+00:00 app[web.1]: debug: setting request GET /socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139863727
+2013-11-22T17:04:23.916731+00:00 app[web.1]: debug: setting poll timeout
+2013-11-22T17:04:23.916823+00:00 app[web.1]: debug: discarding transport
+2013-11-22T17:04:33.915699+00:00 app[web.1]: debug: clearing poll timeout
+2013-11-22T17:04:33.916360+00:00 app[web.1]: debug: set close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:04:33.918288+00:00 app[web.1]: debug: xhr-polling closed due to exceeded duration
+2013-11-22T17:04:33.916111+00:00 app[web.1]: debug: xhr-polling writing 8::
+2013-11-22T17:03:49.235171+00:00 heroku[router]: at=info method=GET path=/socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139818623 host=mysterious-refuge-6512.herokuapp.com fwd="70.192.42.121" dyno=web.1 connect=2ms service=10020ms status=200 bytes=3
+2013-11-22T17:04:35.553893+00:00 app[web.1]: debug: discarding transport
+2013-11-22T17:04:35.552482+00:00 app[web.1]: debug: setting request GET /socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139875594
+2013-11-22T17:04:35.553282+00:00 app[web.1]: debug: setting poll timeout
+2013-11-22T17:04:35.554256+00:00 app[web.1]: debug: cleared close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:04:45.558252+00:00 heroku[router]: at=info method=GET path=/socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139875594 host=mysterious-refuge-6512.herokuapp.com fwd="70.192.42.121" dyno=web.1 connect=7ms service=10010ms status=200 bytes=3
+2013-11-22T17:04:45.554172+00:00 app[web.1]: debug: set close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:04:45.554344+00:00 app[web.1]: debug: xhr-polling closed due to exceeded duration
+2013-11-22T17:04:45.553607+00:00 app[web.1]: debug: clearing poll timeout
+2013-11-22T17:04:45.553964+00:00 app[web.1]: debug: xhr-polling writing 8::
+2013-11-22T17:04:33.928301+00:00 heroku[router]: at=info method=GET path=/socket.io/1/xhr-polling/xiNLp0CXLafpaXsWkSko?t=1385139863727 host=mysterious-refuge-6512.herokuapp.com fwd="70.192.42.121" dyno=web.1 connect=4ms service=10019ms status=200 bytes=3
+2013-11-22T17:05:46.467279+00:00 app[web.1]: debug: fired close timeout for client xiNLp0CXLafpaXsWkSko
+2013-11-22T17:05:46.467279+00:00 app[web.1]: info: transport end (close timeout)
+2013-11-22T17:05:46.467279+00:00 app[web.1]: debug: discarding transport
+2013-11-22T18:07:46.648858+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2013-11-22T18:07:49.142246+00:00 heroku[web.1]: Process exited with status 1
+2013-11-22T18:07:42.985158+00:00 heroku[web.1]: Idling
+2013-11-22T18:07:42.985688+00:00 heroku[web.1]: State changed from up to down
