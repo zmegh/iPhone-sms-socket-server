@@ -50,7 +50,7 @@ io.sockets.emit('status', { status: status }); // note the use of io.sockets to 
 });*/
 
 io.sockets.on('connection', function (socket) {
-    io.sockets.emil("in", { sender: "New user" });
+    io.sockets.emit("in", { sender: "New user" });
 
     console.log("*******New User *******");
     var address = socket.handshake.address;
